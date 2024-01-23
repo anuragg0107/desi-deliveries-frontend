@@ -1,0 +1,114 @@
+[
+    {
+      "id": 1,
+      "title": "Chicken Korma",
+      "price": 640,
+      "description":  "Savor the royal taste of our Chicken Korma, a creamy blend of tender chicken and aromatic spices, delivered to your door for an authentic Indian delight.",
+      "category": "non-veg",
+      "image": "https://img.freepik.com/free-photo/curry-with-chicken-onions-indian-food-asian-cuisine-top-view_2829-4414.jpg?size=626&ext=jpg&ga=GA1.1.632798143.1705622400&semt=ais"
+    },
+    {
+      "id": 2,
+      "title": "Paneer do pyaja",
+      "price": 330,
+      "description": "Delight in our Paneer Do Pyaza – succulent paneer, onions, and aromatic spices in a rich curry, delivered for an exquisite taste of Indian cuisine.",
+      "category": "veg",
+      "image": "https://us.123rf.com/450wm/indianfoodimages/indianfoodimages1812/indianfoodimages181204055/113866779-paneer-do-pyaza-is-a-popular-punjabi-vegetarian-recipe-using-cubes-of-cottage-cheese-with-lots-of.jpg?ver=6"
+    },
+    {
+      "id": 3,
+      "title": "Tandoori roti",
+      "price": 20,
+      "description": "Experience the true taste of India with our Tandoori Roti – soft, flame-baked perfection delivered to your door.",
+      "category": "veg",
+      "image":"https://t3.ftcdn.net/jpg/06/22/18/16/360_F_622181645_4BEnUcA1i041YplxBlgc4f6jfar9UU5y.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Lachha paratha",
+      "price": 35,
+      "description": "Indulge in the crisp layers of our Lachha Paratha – a flaky delight that elevates any meal, delivered fresh for a taste of Indian culinary simplicity.",
+      "category": "veg",
+      "image": "https://t4.ftcdn.net/jpg/06/86/01/15/360_F_686011527_FH3C2v9Vr6IfQYr5yGqPDtA1BE3jrDi9.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Garlic mashroom",
+      "price": 210,
+      "description": "Savor the delectable blend of garlic-infused mushrooms – a flavorful delight to complement any dish, delivered for a gourmet touch to your meal.",
+      "category": "veg",
+      "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJQMHvwgPKBQ70EPyAqt2F1V4BwOqEUVQVmw&usqp=CAU"
+    },
+    {
+      "id": 6,
+      "title": "Mutton curry",
+      "price":800,
+      "description": "Enjoy the rich taste of our Mutton Curry – succulent mutton pieces in a flavorful curry, delivered to your doorstep for an authentic Indian feast.",
+      "category": "men clothing",
+      "image": "https://img.freepik.com/free-photo/delicious-goulash-ready-dinner_23-2149370900.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Veg noodles",
+      "price":99,
+      "description": "Delight in our Veg Noodles – a wok-tossed medley of colorful vegetables and perfectly cooked noodles, delivered for a quick and tasty Asian-inspired treat.",
+      "category": "veg",
+      "image":"https://img.freepik.com/free-photo/close-up-bowl-vegetables-noodles_23-2148382863.jpg?size=626&ext=jpg&ga=GA1.1.1412446893.1704585600&semt=ais"
+    },
+    {
+      "id": 8,
+      "title": "Pav bhaji",
+      "price":120,
+      "description": "Savor the iconic flavors of our Pav Bhaji – a mouthwatering blend of spiced vegetables served with buttery pav buns, delivered for a delightful street food experience.",
+      "category": "veg",
+      "image": "https://img.freepik.com/premium-photo/mumbai-style-pav-bhaji-is-fast-food-dish-from-india-consists-thick-vegetable-curry-served-with-soft-bread-roll-served-plate_466689-2229.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Golgappe",
+      "price": 50,
+      "description": "Experience the burst of flavors with our Golgappe – crispy, hollow puris filled with spicy, tangy delights, delivered for an instant taste of Indian street food joy",
+      "category": "veg",
+      "image":"https://img.freepik.com/premium-photo/dahi-puri-is-snack-popular-state-maharashtra-india-this-dish-comes-chat-category-served-round-plate-colourful-wooden-background-selective-focus_466689-69117.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Samosa",
+      "price": 30,
+      "description": "Crunch into perfection with our Samosas – golden, crispy triangles filled with spiced potatoes and peas, delivered for a savory taste of India's favorite snack.",
+      "category": "veg",
+      "image": "https://img.freepik.com/free-photo/deep-fried-samosas-dumplings-gourmet-appetizer-generated-by-ai_188544-13491.jpg"
+    },
+    {
+        "id": 11,
+        "title": "Poha",
+        "price": 20,
+        "description": "Savor simplicity with our Poha – a light and flavorful dish of flattened rice, spices, and fresh herbs, delivered for a comforting breakfast or snack experience.",
+        "category": "veg",
+        "image": "https://img.freepik.com/premium-photo/aloo-kanda-poha-tarri-pohe-with-spicy-chana-masala-curry-selective-focus_998418-13.jpg"
+      },
+      {
+        "id": 12,
+        "title": "Chilly chiken",
+        "price": 350,
+        "description": "Spice up your taste buds with our Chilli Chicken – succulent chicken wok-tossed with vibrant bell peppers and fiery spices, delivered for a bold and flavorful dining experience.",
+        "category": "non-veg",
+        "image": "https://img.freepik.com/premium-photo/food-images-any-restaurant_249033-13.jpg"
+      },
+      {
+        "id": 13,
+        "title": "Chiken korma",
+        "price": 305,
+        "description": "Indulge in our Chicken Korma – a velvety blend of tender chicken, cashew, and aromatic spices, delivered for a rich and regal taste of Indian cuisine.",
+        "category": "non-veg",
+        "image": "https://static.vecteezy.com/system/resources/previews/015/933/078/non_2x/red-chicken-curry-or-murgh-masala-or-korma-with-prominent-leg-piece-free-photo.jpg"
+      },
+      {
+        "id": 14,
+        "title": "Chicken biryani",
+        "price": 133,
+        "description": "Savor the aromatic perfection of our Chicken Biryani – fragrant basmati rice layered with succulent chicken, infused with aromatic spices, and delivered for a royal feast in every bite.",
+        "category": "non-veg",
+        "image": "https://img.freepik.com/free-photo/gourmet-biryani-with-saffron-rice-chicken-generated-by-ai_188544-39093.jpg?size=626&ext=jpg&ga=GA1.1.632798143.1705708800&semt=sph"
+      }
+  ]

@@ -1,0 +1,7 @@
+.forgot{
+    background: url('../../images/forgot.gif') center center / cover no-repeat;
+    height: 89.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

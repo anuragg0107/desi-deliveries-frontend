@@ -1,0 +1,8 @@
+.register{
+    background: url('../../images/registerlogo.gif') center center / cover no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+}
