@@ -102,16 +102,18 @@ const Food = () => {
     <>
       <Navbar />
       <div className="mt-5 position-relative">
-  <img
-    src={foodhome}
-    alt="food"
-    style={{ width: "100%", maxHeight: "500px" }}
-  />
-  <h1 className="position-absolute text-center w-100 text-black" style={{ top: "80%", transform: "translateY(-50%)" }}>
-    Welcome to DesiDeliveries
-  </h1>
-</div>
-
+        <img
+          src={foodhome}
+          alt="food"
+          style={{ width: "100%", maxHeight: "500px" }}
+        />
+        <h1
+          className="position-absolute text-center w-100 text-black"
+          style={{ top: "80%", transform: "translateY(-50%)" }}
+        >
+          Welcome to DesiDeliveries
+        </h1>
+      </div>
 
       <div className="text-center mt-2 mb-2">
         <h1>Search Food</h1>
