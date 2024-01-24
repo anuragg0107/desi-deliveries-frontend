@@ -73,7 +73,7 @@ const Cart = () => {
     <>
       <Navbar />
 
-      <section className="h-100 gradient-custom">
+      <section className="h-100 gradient-custom mt-5">
         <div className="container py-5">
           <div className="row d-flex justify-content-center my-4">
             <div className="col-md-8">

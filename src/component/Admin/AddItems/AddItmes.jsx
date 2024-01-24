@@ -23,8 +23,8 @@ const AddItmes = () => {
     try {
       setLoading(true);
       const res = await axios.post(
-        "https://backend-desideliveries.onrender.com/food/api/food",
-        addItemData
+        "http://localhost:8080/api/food",
+        addItemData,
       );
       await res.data;
       setLoading(false);

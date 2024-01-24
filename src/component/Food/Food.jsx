@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Form, InputGroup,  } from "react-bootstrap";
+import { Button, Form, InputGroup } from "react-bootstrap";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import axios from "axios";
@@ -7,7 +7,7 @@ import Loading from "../Loader/Loading";
 import foodhome from "../../images/food.gif";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
-import { toast,ToastContainer } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 
 const Food = () => {
   const [food, setFood] = useState([]);
@@ -15,28 +15,31 @@ const Food = () => {
   const [error, setError] = useState();
   const [searchFood, setSearchFood] = useState("");
   const [foodTypeFilter, setFoodTypeFilter] = useState("");
+  const [sortOption, setSortOption] = useState("");
 
   const getData = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("https://backend-desideliveries.onrender.com/api/food");
+      const response = await axios.get(
+        "https://backend-desideliveries.onrender.com/api/food"
+      );
       const setdata = await response.data;
-      if (foodTypeFilter.toLowerCase() === "") {
-        setFood(setdata);
-      } else {
-        setFood(
-          setdata.filter((el) => {
-            return (
-              (foodTypeFilter === "" || el.category === foodTypeFilter) &&
-              (searchFood.toLocaleLowerCase() === "" ||
-                el.title.toLocaleLowerCase().includes(searchFood))
-            );
-          })
+
+      let filteredData = setdata.filter((el) => {
+        return (
+          (foodTypeFilter === "" || el.category === foodTypeFilter) &&
+          (searchFood.toLocaleLowerCase() === "" ||
+            el.title.toLocaleLowerCase().includes(searchFood))
         );
+      });
+      if (sortOption === "lowToHigh") {
+        filteredData = filteredData.sort((a, b) => a.price - b.price);
+      } else if (sortOption === "highToLow") {
+        filteredData = filteredData.sort((a, b) => b.price - a.price);
       }
 
+      setFood(filteredData);
       setLoading(false);
-
     } catch (err) {
       setError(err);
       setLoading(false);
@@ -60,32 +63,36 @@ const Food = () => {
 
   const handleAddToCart = async (foodId) => {
     const user = JSON.parse(localStorage.getItem("currentUser"));
-  
+
     if (!user) {
       // User is not login, redirect to the login page
       window.location.href = "/login";
     } else {
       try {
         const selectedItem = food.find((item) => item.id === foodId);
-        const response = await axios.post("https://backend-desideliveries.onrender.com/api/cart", {
-          title: selectedItem.title,
-          price: selectedItem.price,
-          image: selectedItem.image,
-          category: selectedItem.category,
-          description: selectedItem.description,
-          size: 'Half',
-        });
-  
+        const response = await axios.post(
+          "https://backend-desideliveries.onrender.com/api/cart",
+          {
+            title: selectedItem.title,
+            price: selectedItem.price,
+            image: selectedItem.image,
+            category: selectedItem.category,
+            description: selectedItem.description,
+            size: "Half",
+          }
+        );
+
         const responseData = response.data;
-        toast.success("Item added to your cart!", { position: toast.POSITION.TOP_RIGHT });
+        toast.success("Item added to your cart!", {
+          position: toast.POSITION.TOP_RIGHT,
+        });
       } catch (error) {
-        toast.error("Error adding item to cart", { position: toast.POSITION.TOP_RIGHT });
+        toast.error("Error adding item to cart", {
+          position: toast.POSITION.TOP_RIGHT,
+        });
       }
     }
   };
-  
-  
-
 
   const handleQuantityChange = () => {};
 
@@ -94,13 +101,18 @@ const Food = () => {
   return (
     <>
       <Navbar />
-      <div>
-        <img
-          src={foodhome}
-          alt="food"
-          style={{ width: "100%", maxHeight: "500px" }}
-        />
-      </div>
+      <div className="mt-5 position-relative">
+  <img
+    src={foodhome}
+    alt="food"
+    style={{ width: "100%", maxHeight: "500px" }}
+  />
+  <h1 className="position-absolute text-center w-100 text-black" style={{ top: "80%", transform: "translateY(-50%)" }}>
+    Welcome to DesiDeliveries
+  </h1>
+</div>
+
+
       <div className="text-center mt-2 mb-2">
         <h1>Search Food</h1>
         <div className="container">
@@ -130,6 +142,16 @@ const Food = () => {
                     </option>
                   ))}
                 </select>
+                <select
+                  className="form-control mb-3 w-25 border-1"
+                  style={{ marginLeft: "14px" }}
+                  value={sortOption}
+                  onChange={(e) => setSortOption(e.target.value)}
+                >
+                  <option value="default">Sort by</option>
+                  <option value="lowToHigh">Price: Low to High</option>
+                  <option value="highToLow">Price: High to Low</option>
+                </select>
               </div>
             </div>
           </div>
@@ -144,13 +166,23 @@ const Food = () => {
           {loading ? (
             <Loading />
           ) : food.length > 0 ? (
-            food.filter((el) => {
+            food
+              .filter((el) => {
                 return (
                   (foodTypeFilter === "" || el.category === foodTypeFilter) &&
                   (searchFood.toLocaleLowerCase() === "" ||
                     el.title.toLocaleLowerCase().includes(searchFood))
                 );
-              }).map((el) => (
+              })
+              .sort((a, b) => {
+                if (sortOption === "lowToHigh") {
+                  return a.price - b.price;
+                } else if (sortOption === "highToLow") {
+                  return b.price - a.price;
+                }
+                return 0;
+              })
+              .map((el) => (
                 <div key={el.id} className="col-md-4 mb-4">
                   <div className="card">
                     <h5 className="card-title text-center mb-2 mt-2">
